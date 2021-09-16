@@ -1,5 +1,5 @@
 # ISOApp
-Control de versiones para la aplicación desarrollada en la asignatura de Ingeniería del Software
+Este repositorio está pensado para realizar un control de versiones para la aplicación móvil desarrollada en la asignatura de Ingeniería del Software.
 
 ## Requisitos de la aplicación
 
