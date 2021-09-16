@@ -10,3 +10,4 @@ Este repositorio está pensado para realizar un control de versiones para la apl
 5. Capaz de vender instantáneamente en cualquier momento.
 6. Capaz de consultar los resultados de la última operación realizada.
 7. Capaz de mostrar los posibles errores que ocurran en la ejecución de la aplicación.
+8. Posibilidad de añadir un gráfico a tiempo real del par de moneda seleccionado. 
