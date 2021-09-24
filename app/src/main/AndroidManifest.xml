@@ -22,19 +22,10 @@
             android:name=".trade.TradeActivity"
             android:exported="true" />
         <activity
-            android:name=".trade.MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".trade.CoinActivity"
             android:exported="true" />
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".config.ParamsHelpActivity"
-            android:exported="true" />
-        <activity
-            android:name=".config.ApisHelpActivity"
             android:exported="true" />
         <activity
             android:name=".config.ApisActivity"
