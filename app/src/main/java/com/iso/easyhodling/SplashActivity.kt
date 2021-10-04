@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
         splashTimer(this)
     }
 
-    private fun splashTimer(context: Context){
+private fun splashTimer(context: Context){
         object : CountDownTimer(2000, 1000){
             override fun onTick(millisUntilFinished: Long) {
 
@@ -29,5 +29,4 @@ class SplashActivity : AppCompatActivity() {
             }
         }.start()
     }
-
 }
