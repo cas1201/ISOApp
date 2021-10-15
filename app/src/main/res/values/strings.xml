@@ -1,0 +1,62 @@
+<resources>
+    <string name="title_activity_main" />
+    <string name="app_name">EASY HODLING</string>
+    <string name="logo">EasyHodling logo</string>
+
+    <!--Menu Lateral-->
+    <string name="navigation_drawer_open">Abrir menú lateral</string>
+    <string name="navigation_drawer_close">Cerrar menú lateral</string>
+    <string name="nav_header_title">EasyHodling</string>
+    <string name="nav_header_subtitle">easy.hodling@iso.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_wallet">Cartera</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="menu_about">Sobre nosotros</string>
+
+    <!--Hints-->
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="name">Nombre</string>
+    <string name="percentage">Porcentaje</string>
+    <string name="limit">Límite</string>
+
+    <!--Botones-->
+    <string name="signin_bt">Entrar</string>
+    <string name="signup_bt">Crear cuenta</string>
+    <string name="back">Volver</string>
+    <string name="config">Configuración</string>
+    <string name="save">Guardar</string>
+    <string name="demo">Modo demo</string>
+    <string name="real">Modo real</string>
+    <string name="apis">Apis</string>
+    <string name="params">Parámetros</string>
+
+    <!--Test-->
+    <!--PREGUNTAS-->
+    <string name="quest1">¿Cuál es la frecuencia con la que juegas a juegos de azar?</string>
+    <string name="quest2">¿Has tenido la sensación de que deberías reducir tu conducta de juego?</string>
+    <string name="quest3">¿Niegas, ocultas o minimizas las veces que vas a jugar, las apuestas que haces o la cantidad que te juegas o pierdes?</string>
+    <string name="quest4">Has tenido problemas con el juego como por ejemplo alguna pelea familiar, problemas en el trabajo, problemas económicos o de sueño.</string>
+    <string name="quest5"> Finalmente, ¿Te sientes impulsado a jugar a pesar de tus problemas y no puedes dejarlo?</string>
+
+    <!--RESPUESTAS-->
+    <!--PREGUNTA1-->
+    <string name="answer11">1 o 2 veces por semana</string>
+    <string name="answer12">3 o 4 veces por semana</string>
+    <string name="answer13">Todos los días</string>
+    <string name="answer14">1 vez cada 2 semanas o menos</string>
+
+    <!--RESTO PREGUNTAS-->
+    <string name="answer1">Sí</string>
+    <string name="answer2">No, nunca</string>
+    <string name="answer3">A veces sí</string>
+
+    <!--Toast-->
+    <string name="inicio">Bienvenido a Hodling</string>
+    <string name="login">Sesión iniciada!</string>
+    <string name="loginerror">Usuario o contraseña vacíos</string>
+    <string name="limitebien">Límite correctamente establecido</string>
+    <string name="limitemal">Límite incorrecto</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.iso.easyhodling.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/nav_to_config"
+            app:destination="@id/nav_config" />
+        <action
+            android:id="@+id/nav_to_wallet"
+            app:destination="@id/nav_wallet" />
+        <action
+            android:id="@+id/nav_to_help"
+            app:destination="@id/nav_help" />
+        <action
+            android:id="@+id/nav_to_about"
+            app:destination="@id/nav_about" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_config"
+        android:name="com.iso.easyhodling.ui.config.ConfigFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_config" >
+        <action
+            android:id="@+id/nav_to_params"
+            app:destination="@id/paramsFragment" />
+        <action
+            android:id="@+id/nav_back_from_config"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:name="com.iso.easyhodling.ui.wallet.WalletFragment"
+        android:label="@string/menu_wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.iso.easyhodling.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.iso.easyhodling.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/paramsFragment"
+        android:name="com.iso.easyhodling.ui.config.ParamsFragment"
+        android:label="@string/params"
+        tools:layout="@layout/fragment_params" >
+        <action
+            android:id="@+id/nav_back_from_params"
+            app:destination="@id/nav_config" />
+    </fragment>
+</navigation>
