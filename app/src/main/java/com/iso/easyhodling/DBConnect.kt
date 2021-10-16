@@ -28,6 +28,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         TODO("Not yet implemented")
     }
 
+    // Funcion para añadir un nuevo usuario a la base de datos
     fun addUserToDB (context: Context, name: String, surname: String, username: String,
                      email: String, password: String){
         val db: SQLiteDatabase = writableDatabase
@@ -43,6 +44,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         db.close()
     }
 
+    // Funcion para comprobar los datos de un usuario que intenta iniciar sesion
     fun getUserFromDBLogin(username: String, password: String): Boolean {
         val db: SQLiteDatabase = readableDatabase
         val query = "SELECT nombreUsuario, password FROM usuario WHERE " +
@@ -57,6 +59,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         return true
     }
 
+    // Funcion para comprobar si ya existe un usuario cuando se crea una cuenta nueva
     fun getUserFromDBCreate(username: String, email: String): Boolean {
         val db: SQLiteDatabase = readableDatabase
         val query = "SELECT nombreUsuario, email FROM usuario WHERE " +

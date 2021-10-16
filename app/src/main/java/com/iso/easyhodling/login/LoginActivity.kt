@@ -10,6 +10,7 @@ import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityLoginBinding
 import com.iso.easyhodling.survey.SurveyActivity
 import kotlin.math.log
+import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,20 +25,36 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 
+    // Funcion para el comportamiento del boton de entrar en la pantalla de login
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        if (!loginViewModel.loginChecker(this, username, password)){
-            Toast.makeText(this, R.string.loginerror_credentials, Toast.LENGTH_SHORT).show()
-        }
-        else{
-            Toast.makeText(this, R.string.login, Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, SurveyActivity::class.java))
-        }
+        /*
+        Los valores que puede tomar la variable 'checkerresponse' son:
+            0 =  los campos a rellenar de login estan vacios
+            1 = los datos introducidos no son correctos
+            2 = los datos introducidos son correctos
+        */
+        val checkerResponse = loginViewModel.loginChecker(this, username, password)
+        loginResponse(checkerResponse)
     }
 
+    // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login
     fun goToCreateAccount(view: View){
         startActivity(Intent(this, CreateAccountActivity::class.java))
+    }
+
+    // Funcion para el comportamiento del login cuando introduces los datos
+    private fun loginResponse(logResponse: Int){
+        when(logResponse){
+            0 -> Toast.makeText(this, R.string.loginerror_blank, Toast.LENGTH_SHORT).show() //campos vacios
+            1 -> Toast.makeText(this, R.string.loginerror_credentials, Toast.LENGTH_SHORT).show()
+            2 -> {
+                Toast.makeText(this, R.string.login, Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, SurveyActivity::class.java))
+                finish()
+            }
+        }
     }
 }

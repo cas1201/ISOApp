@@ -20,6 +20,7 @@ class CreateAccountActivity : AppCompatActivity() {
         createAccountViewModel = ViewModelProvider(this).get(CreateAccountViewModel::class.java)
     }
 
+    // Funcion para el comportamiento del boton de crear cuenta en la pantalla de crear cuenta
     fun addUser(view: View){
 
         val username = binding.usernameText.text.toString()
@@ -28,7 +29,9 @@ class CreateAccountActivity : AppCompatActivity() {
         val email = binding.emailText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        if (createAccountViewModel.createUser(this, username, name, surname, email, password))
+        if (createAccountViewModel.createUser(this, username, name, surname, email, password)){
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
     }
 }

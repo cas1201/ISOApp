@@ -63,6 +63,7 @@
     <string name="loginerror_existing_user">Nombre de usuario o email no disponible…</string>
     <string name="user_created">Usuario creado!</string>
     <string name="sign_up_blank">No puede haber ningún campo vacío…</string>
+    <string name="user_db_recover_error">Error al recuperar usuario de la base de datos</string>
     <string name="limitebien">Límite correctamente establecido</string>
     <string name="limitemal">Límite incorrecto</string>
 </resources>

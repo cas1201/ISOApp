@@ -10,6 +10,7 @@ class CreateAccountViewModel: ViewModel() {
 
     lateinit var handler: DBConnect
 
+    // Funcion para crear un nuevo usuario con los datos introducidos en la base de datos
     fun createUser(context: Context, username: String, name: String,
     surname: String, email: String, password: String): Boolean{
         handler = DBConnect(context)
