@@ -60,7 +60,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
     }
 
     // Funcion para comprobar si ya existe un usuario cuando se crea una cuenta nueva
-    fun getUserFromDBCreate(username: String, email: String): Boolean {
+    fun getUserFromDBCreateAccount(username: String, email: String): Boolean {
         val db: SQLiteDatabase = readableDatabase
         val query = "SELECT nombreUsuario, email FROM usuario WHERE " +
                 "nombreUsuario = '${username}' and email = '${email}'"

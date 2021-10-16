@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.iso.easyhodling.EasyHodlingApp.Companion.prefs
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityLoginBinding
 import com.iso.easyhodling.survey.SurveyActivity
@@ -51,6 +52,8 @@ class LoginActivity : AppCompatActivity() {
             0 -> Toast.makeText(this, R.string.loginerror_blank, Toast.LENGTH_SHORT).show() //campos vacios
             1 -> Toast.makeText(this, R.string.loginerror_credentials, Toast.LENGTH_SHORT).show()
             2 -> {
+                prefs.saveUsername(binding.userText.text.toString())
+                prefs.saveEmail(binding.userText.text.toString())
                 Toast.makeText(this, R.string.login, Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, SurveyActivity::class.java))
                 finish()

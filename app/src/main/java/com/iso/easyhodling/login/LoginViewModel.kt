@@ -1,10 +1,8 @@
 package com.iso.easyhodling.login
 
 import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.iso.easyhodling.DBConnect
-import com.iso.easyhodling.R
 
 class LoginViewModel: ViewModel() {
 

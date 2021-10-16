@@ -19,7 +19,7 @@ class CreateAccountViewModel: ViewModel() {
             Toast.makeText(context, R.string.sign_up_blank, Toast.LENGTH_SHORT).show()
             false
         } else{
-            if (handler.getUserFromDBCreate(username, email)) {
+            if (handler.getUserFromDBCreateAccount(username, email)) {
                 Toast.makeText(context, R.string.loginerror_existing_user, Toast.LENGTH_SHORT)
                     .show()
                 false

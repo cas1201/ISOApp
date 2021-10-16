@@ -39,8 +39,7 @@
                     android:ems="10"
                     android:hint="@string/user"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    tools:ignore="LabelFor" />
+                    android:minHeight="48dp"/>
 
                 <EditText
                     android:id="@+id/nameText"
@@ -50,8 +49,7 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    tools:ignore="LabelFor" />
+                    android:minHeight="48dp"/>
 
                 <EditText
                     android:id="@+id/surnameText"
@@ -61,8 +59,7 @@
                     android:ems="10"
                     android:hint="@string/surname"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    tools:ignore="LabelFor" />
+                    android:minHeight="48dp"/>
 
                 <EditText
                     android:id="@+id/emailText"
@@ -71,9 +68,8 @@
                     android:layout_marginTop="25dp"
                     android:ems="10"
                     android:hint="@string/email"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    tools:ignore="LabelFor" />
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"/>
 
                 <EditText
                     android:id="@+id/passwordText"
@@ -83,8 +79,7 @@
                     android:ems="10"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:minHeight="48dp"
-                    tools:ignore="LabelFor" />
+                    android:minHeight="48dp"/>
             </LinearLayout>
         </ScrollView>
 

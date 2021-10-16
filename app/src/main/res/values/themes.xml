@@ -22,4 +22,7 @@
     <style name="Theme.EasyHodling.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.EasyHodling.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Estilos para los editText-->
+    <style name="editTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
 </resources>
