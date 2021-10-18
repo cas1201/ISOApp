@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_menu_wallet"
             android:title="@string/menu_wallet" />
         <item
+            android:id="@+id/nav_forum"
+            android:icon="@drawable/ic_menu_forum"
+            android:title="@string/menu_forum" />
+        <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_menu_help"
             android:title="@string/menu_help" />

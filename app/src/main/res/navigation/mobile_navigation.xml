@@ -21,6 +21,9 @@
         <action
             android:id="@+id/nav_to_about"
             app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/nav_to_forum"
+            app:destination="@id/nav_forum" />
     </fragment>
 
     <fragment
@@ -62,4 +65,9 @@
             android:id="@+id/nav_back_from_params"
             app:destination="@id/nav_config" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_forum"
+        android:name="com.iso.easyhodling.ui.forum.ForumFragment"
+        android:label="forum_fragment"
+        tools:layout="@layout/forum_fragment" />
 </navigation>

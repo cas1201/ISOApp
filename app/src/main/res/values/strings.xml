@@ -13,6 +13,7 @@
     <string name="menu_settings">Ajustes</string>
     <string name="menu_wallet">Cartera</string>
     <string name="menu_help">Ayuda</string>
+    <string name="menu_forum">Foro</string>
     <string name="menu_about">Sobre nosotros</string>
 
     <!--Hints-->
@@ -34,6 +35,7 @@
     <string name="real">Modo real</string>
     <string name="apis">Apis</string>
     <string name="params">Parámetros</string>
+    <string name="forum">Foro</string>
 
     <!--Test-->
     <!--PREGUNTAS-->
