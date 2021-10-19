@@ -81,9 +81,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:ems="10"
-                android:minHeight="48dp"
                 android:hint="@string/percentage"
-                android:inputType="number"/>
+                android:hintTextColor="#757575"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/limitText"
@@ -93,8 +95,18 @@
                 android:ems="10"
                 android:minHeight="48dp"
                 android:hint="@string/limit"
+                android:onClick="goToHome"
                 android:inputType="number"/>
-
+        <!--Falta bloquear el acceso del usuario después -->
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btexclus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exclusion"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="648dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

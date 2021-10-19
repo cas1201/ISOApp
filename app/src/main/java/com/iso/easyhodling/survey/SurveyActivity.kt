@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.iso.easyhodling.MainActivity
 import com.iso.easyhodling.R
 
@@ -16,5 +17,6 @@ class SurveyActivity : AppCompatActivity() {
     fun goToHome(view: View){
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+        //Toast.makeText(this, R.string.testsave, Toast.LENGTH_SHORT).show()
     }
 }
