@@ -71,4 +71,5 @@
     <string name="limitemal">Límite incorrecto</string>
     <string name="testsave">Test guardado con éxito</string>
     <string name="excluded">Tu cuenta ha sido bloqueada y no podrá volver a acceder</string>
+    <string name="cuentacreada">Cuenta creada</string>
 </resources>

@@ -30,8 +30,7 @@ class LoginActivity : AppCompatActivity() {
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
-
-        /*
+        /* Cuando se hayan creado los users, añadir aquí para excluir al user que se ha autoexcluido
         Los valores que puede tomar la variable 'checkerresponse' son:
             0 =  los campos a rellenar de login estan vacios
             1 = los datos introducidos no son correctos
@@ -44,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
     // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login
     fun goToCreateAccount(view: View){
         startActivity(Intent(this, CreateAccountActivity::class.java))
+        Toast.makeText(this, R.string.cuentacreada,Toast.LENGTH_SHORT).show()
     }
 
     // Funcion para el comportamiento del login cuando introduces los datos

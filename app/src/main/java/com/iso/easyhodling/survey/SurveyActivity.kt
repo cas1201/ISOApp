@@ -16,7 +16,8 @@ class SurveyActivity : AppCompatActivity() {
 
     fun goToHome(view: View){
         startActivity(Intent(this, MainActivity::class.java))
+        Toast.makeText(this, R.string.testsave, Toast.LENGTH_SHORT).show()
         finish()
-        //Toast.makeText(this, R.string.testsave, Toast.LENGTH_SHORT).show()
+
     }
 }
