@@ -96,16 +96,15 @@
                 android:hint="@string/limit"
                 android:onClick="goToHome"
                 android:inputType="number"/>
-        <!--Falta bloquear el acceso del usuario después -->
+
         </LinearLayout>
     </ScrollView>
-
+    <!--Falta bloquear el acceso del usuario después -->
     <Button
         android:id="@+id/btexclus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="165dp"
+        android:layout_height="46dp"
+        android:onClick="goToMain"
         android:text="@string/exclusion"
-        tools:layout_editor_absoluteX="235dp"
-        tools:layout_editor_absoluteY="648dp"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
