@@ -80,21 +80,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:ems="10"
                 android:hint="@string/percentage"
                 android:inputType="number"
-                android:minHeight="48dp"
-                tools:ignore="TextContrastCheck" />
+                android:minHeight="48dp"/>
 
             <EditText
                 android:id="@+id/limitText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:ems="10"
                 android:minHeight="48dp"
                 android:hint="@string/limit"
-                android:onClick="goToHome"
                 android:inputType="number"/>
 
         </LinearLayout>
@@ -102,9 +98,14 @@
     <!--Falta bloquear el acceso del usuario después -->
     <Button
         android:id="@+id/btexclus"
-        android:layout_width="165dp"
-        android:layout_height="46dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
         android:onClick="goToMain"
         android:text="@string/exclusion"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

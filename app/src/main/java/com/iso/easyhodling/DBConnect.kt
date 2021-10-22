@@ -25,7 +25,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+
     }
 
     // Funcion para añadir un nuevo usuario a la base de datos

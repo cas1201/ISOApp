@@ -64,13 +64,12 @@
 <string name="login">Logged in!</string>
 <string name="loginerror_blank">Empty username or password</string>
 <string name="loginerror_credentials">Incorrect username or password</string>
-<string name="loginerror_existing_user">Username or email not available...</string>
+<string name="loginerror_existing_user">Username or email not available…</string>
 <string name="user_created">User created!</string>
-<string name="sign_up_blank">There can be no empty field...</string>
+<string name="sign_up_blank">There can be no empty field…</string>
 <string name="user_db_recover_error">Error while recovering user from database</string>
 <string name="limitebien">Limit correctly set</string>
 <string name="limitemal">Incorrect boundary </string>
 <string name="testsave">Saved Test</string>
 <string name="excluded">Your account has been blocked and you will not be able to access it again</string>
-    <string name="cuentacreada">Account created</string>
 </resources>
