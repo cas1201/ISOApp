@@ -9,7 +9,13 @@ class KataDeBolos {
 
     @Test
     fun partidaSinPuntos(){
-        val puntuacion = partida.puntuacion()
+        val puntuacion = partida.puntuacion(0)
         assertEquals(0, puntuacion)
+    }
+
+    @Test
+    fun partidaCuatroPuntos(){
+        val puntuacion = partida.puntuacion(4)
+        assertEquals(4, puntuacion)
     }
 }

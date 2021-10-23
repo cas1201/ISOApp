@@ -1,7 +1,10 @@
 package com.iso.easyhodling
 
 class Partida {
-    fun puntuacion(): Int {
-        return 0
+    private var puntuacion = 0
+
+    fun puntuacion(bolosTirados: Int): Int {
+        puntuacion += bolosTirados
+        return puntuacion
     }
 }
