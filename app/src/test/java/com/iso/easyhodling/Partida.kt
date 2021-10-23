@@ -11,7 +11,8 @@ class Partida {
     fun puntuacion(): Int {
         if (ultimoTurno != 1) {
             if (partida[ultimoTurno - 2].sum() == 10)
-                puntuacion = partida[ultimoTurno - 1].sum() + partida[ultimoTurno - 1][0]
+                puntuacion =
+                    partida[ultimoTurno - 1].sum() + partida[ultimoTurno - 1][0]
             else
                 puntuacion += partida[ultimoTurno - 1].sum()
         } else
