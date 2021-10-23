@@ -25,4 +25,11 @@ class KataDeBolos {
         puntuacion = partida.puntuacion(7)
         assertEquals(7, puntuacion)
     }
+
+    @Test
+    fun partidaCuatroPuntosDosTiros(){
+        for (i in 1..2)
+            puntuacion = partida.puntuacion(2)
+        assertEquals(4, puntuacion)
+    }
 }
