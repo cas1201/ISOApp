@@ -10,26 +10,31 @@ class KataDeBolos {
 
     @Test
     fun partidaSinPuntos(){
-        puntuacion = partida.puntuacion(0)
+        puntuacion = partida.puntuacion(0, 0)
         assertEquals(0, puntuacion)
     }
 
     @Test
     fun partidaCuatroPuntos(){
-        puntuacion = partida.puntuacion(4)
+        puntuacion = partida.puntuacion(4, 0)
         assertEquals(4, puntuacion)
     }
 
     @Test
     fun partidaSietePuntos(){
-        puntuacion = partida.puntuacion(7)
+        puntuacion = partida.puntuacion(7, 0)
         assertEquals(7, puntuacion)
     }
 
     @Test
     fun partidaCuatroPuntosDosTiros(){
-        for (i in 1..2)
-            puntuacion = partida.puntuacion(2)
+        puntuacion = partida.puntuacion(2, 2)
         assertEquals(4, puntuacion)
+    }
+
+    @Test
+    fun partidaSietePuntosDosTiros(){
+        puntuacion = partida.puntuacion(2, 5)
+        assertEquals(7, puntuacion)
     }
 }
