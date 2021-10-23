@@ -6,16 +6,23 @@ import org.junit.Test
 class KataDeBolos {
 
     private val partida = Partida()
+    private var puntuacion = 0
 
     @Test
     fun partidaSinPuntos(){
-        val puntuacion = partida.puntuacion(0)
+        puntuacion = partida.puntuacion(0)
         assertEquals(0, puntuacion)
     }
 
     @Test
     fun partidaCuatroPuntos(){
-        val puntuacion = partida.puntuacion(4)
+        puntuacion = partida.puntuacion(4)
         assertEquals(4, puntuacion)
+    }
+
+    @Test
+    fun partidaSietePuntos(){
+        puntuacion = partida.puntuacion(7)
+        assertEquals(7, puntuacion)
     }
 }
