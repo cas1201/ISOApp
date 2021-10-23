@@ -72,4 +72,11 @@ class KataDeBolos {
             partida.turno(10, 0) + partida.turno(2, 0)
         assertEquals(14, puntuacion)
     }
+
+    @Test
+    fun partidaUnPlenoYPuntuarAmbasTiradasSegundoTurno(){
+        puntuacion =
+            partida.turno(10, 0) + partida.turno(2, 3)
+        assertEquals(20, puntuacion)
+    }
 }
