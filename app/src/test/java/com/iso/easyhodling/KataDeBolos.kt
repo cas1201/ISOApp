@@ -261,4 +261,42 @@ class KataDeBolos {
         partida.tiradaExtraSemipleno(11, 10)
         assertEquals(89, partida.puntuacion())
     }
+
+    @Test
+    fun excepcionSumaMayor10() {
+        try {
+            partida.turno(1, 7, 8)
+        } catch (e: Excepciones) {
+            println(e.message)
+        }
+    }
+
+    @Test
+    fun excepcionTiradaMayor10() {
+        try {
+            partida.turno(1, 11, 0)
+        } catch (e: Excepciones) {
+            println(e.message)
+        }
+    }
+
+    @Test
+    fun excepcionTRondasMaximas() {
+        try {
+            partida.turno(1, 5, 3)
+            partida.turno(2, 4, 4)
+            partida.turno(3, 1, 0)
+            partida.turno(4, 6, 0)
+            partida.turno(5, 7, 0)
+            partida.turno(6, 0, 6)
+            partida.turno(7, 8, 1)
+            partida.turno(8, 5, 1)
+            partida.turno(9, 3, 5)
+            partida.turno(10, 5, 2)
+            partida.turno(11, 0, 0)
+            partida.turno(12, 0, 0)
+        } catch (e: Excepciones) {
+            println(e.message)
+        }
+    }
 }
