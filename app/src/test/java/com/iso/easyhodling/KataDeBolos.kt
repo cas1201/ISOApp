@@ -183,16 +183,33 @@ class KataDeBolos {
 
     @Test
     fun partidaRandom3(){
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
-        partida.turno(0, 0)
         partida.turno(10, 0)
-        assertEquals(10, partida.puntuacion())
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.tiradasExtrasPleno(0, 0)
+        assertEquals(270, partida.puntuacion())
+    }
+
+    @Test
+    fun partidaRandom4(){
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.turno(10, 0)
+        partida.tiradasExtrasPleno(2, 3)
+        assertEquals(282, partida.puntuacion())
     }
 }
