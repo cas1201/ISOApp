@@ -3,13 +3,16 @@
     package="com.iso.easyhodling">
 
     <application
+        android:name=".EasyHodlingApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name=".EasyHodlingApp"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyHodling">
+        <activity
+            android:name=".login.PasswordForgottenActivity"
+            android:exported="false" />
         <activity
             android:name=".survey.SurveyActivity"
             android:exported="true" />

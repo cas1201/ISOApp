@@ -45,6 +45,10 @@ class LoginActivity : AppCompatActivity() {
     fun goToCreateAccount(view: View){
         startActivity(Intent(this, CreateAccountActivity::class.java))
     }
+    // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login
+    fun goToPasswordForgotten(view: View){
+        startActivity(Intent(this, PasswordForgottenActivity::class.java))
+    }
 
     // Funcion para el comportamiento del login cuando introduces los datos
     private fun loginResponse(logResponse: Int){

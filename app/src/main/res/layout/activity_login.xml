@@ -65,6 +65,13 @@
                 android:layout_marginTop="25dp"
                 android:onClick="goToCreateAccount"
                 android:text="@string/signup_bt" />
+            <Button
+                android:id="@+id/forgotpw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:onClick="goToPasswordForgotten"
+                android:text="@string/forgotpswd"/>
         </LinearLayout>
     </LinearLayout>
 
