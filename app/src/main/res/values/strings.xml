@@ -26,6 +26,7 @@
     <string name="percentage">Porcentaje</string>
     <string name="limit">Límite</string>
 
+
     <!--Botones-->
     <string name="signin_bt">Entrar</string>
     <string name="signup_bt">Crear cuenta</string>
@@ -59,7 +60,9 @@
     <string name="answer1">Sí</string>
     <string name="answer2">No, nunca</string>
     <string name="answer3">A veces sí</string>
-
+    <!--RECUPERAR CONTRASEÑA -->
+    <string name="correo">Introduce tu correo electrónico</string>
+    <string name="mailbt">Enviar email</string>
     <!--Toast-->
     <string name="inicio">Bienvenido a Hodling</string>
     <string name="login">Sesión iniciada!</string>
@@ -73,4 +76,5 @@
     <string name="limitemal">Límite incorrecto</string>
     <string name="testsave">Test guardado con éxito</string>
     <string name="excluded">Tu cuenta ha sido bloqueada y no podrá volver a acceder</string>
+
 </resources>

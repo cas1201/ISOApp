@@ -60,6 +60,9 @@
     <string name="answer1">Yes</string>
     <string name="answer2">No</string>
     <string name="answer3">Usually</string>
+    <!--RECUPERAR CONTRASEÑA -->
+    <string name="correo">Introduce your email address</string>
+    <string name="mailbt">Send email</string>
 
     <!--Toast-->
     <string name="inicio">Welcome to Hodling</string>
