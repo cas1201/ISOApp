@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+    id 'com.chaquo.python'
 }
 
 android {
@@ -14,6 +16,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        python {
+            buildPython "C:/Users/alsam/AppData/Local/Programs/Python/Python38/python.exe"
+
+            pip {
+                install "python-binance"
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
 
     buildTypes {
