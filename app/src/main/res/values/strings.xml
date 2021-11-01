@@ -19,6 +19,7 @@
     <!--Hints-->
     <string name="user">Usuario</string>
     <string name="password">Contraseña</string>
+    <string name="passwordrepeat">Repetir Contraseña</string>
     <string name="name">Nombre</string>
     <string name="surname">Apellidos</string>
     <string name="email">Email</string>
