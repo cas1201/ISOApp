@@ -3,7 +3,7 @@ package com.iso.easyhodling
 import android.app.Application
 
 class EasyHodlingApp : Application() {
-    companion object{
+    companion object {
         lateinit var prefs: ShPrefs
     }
 

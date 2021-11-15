@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.binance.api.client.BinanceApiClientFactory
 import com.iso.easyhodling.EasyHodlingApp.Companion.prefs
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityLoginBinding
 import com.iso.easyhodling.survey.SurveyActivity
-import kotlin.math.log
-import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Funcion para el comportamiento del boton de entrar en la pantalla de login
-    fun goToMain(view: View){
+    fun goToMain(view: View) {
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
 
@@ -42,14 +41,21 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login
-    fun goToCreateAccount(view: View){
-        startActivity(Intent(this, CreateAccountActivity::class.java))
+    fun goToCreateAccount(view: View) {
+        var client = BinanceApiClientFactory.newInstance(
+            "rqLOyKvQRkq6T7MfbUsjrWxv17T0TiOXDS8oUrSDA8eUv6EY9EpJbuYOOgE6UxkA",
+            "6LUKVzlvx4WFEe7R9lHgTJsx06qDzDlVh6zWtphqbvKbT55D54RRKhw4mbWH4KmZ"
+        ).newRestClient()
+        val acc = client.account.balances
+        println(acc)
+        //startActivity(Intent(this, CreateAccountActivity::class.java))
     }
 
     // Funcion para el comportamiento del login cuando introduces los datos
-    private fun loginResponse(logResponse: Int){
-        when(logResponse){
-            0 -> Toast.makeText(this, R.string.loginerror_blank, Toast.LENGTH_SHORT).show() //campos vacios
+    private fun loginResponse(logResponse: Int) {
+        when (logResponse) {
+            0 -> Toast.makeText(this, R.string.loginerror_blank, Toast.LENGTH_SHORT)
+                .show() //campos vacios
             1 -> Toast.makeText(this, R.string.loginerror_credentials, Toast.LENGTH_SHORT).show()
             2 -> {
                 prefs.saveUsername(binding.userText.text.toString())
