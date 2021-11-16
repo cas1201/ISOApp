@@ -2,11 +2,9 @@ package com.iso.easyhodling
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
+// import net.sqlcipher.database.SQLiteDatabase con esto se supone que se encripta toda la base de datos
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
-import android.widget.Toast
 
 class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, version) {
 
@@ -33,19 +31,19 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
                      email: String, password: String){
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
-
         values.put("nombreUsuario", username)
         values.put("nombre", name)
         values.put("apellidos", surname)
         values.put("email", email)
         values.put("password", password)
-
+        //ENCRIPTAR CONTRASEÑA
+        //https://code.tutsplus.com/es/tutorials/storing-data-securely-on-android--cms-30558
         db.insert("usuario", null, values)
         db.close()
     }
 
     // Funcion para comprobar los datos de un usuario que intenta iniciar sesion
-    fun getUserFromDBLogin(username: String, password: String): Boolean {
+    fun getUserFromDBLogin(username: String): Boolean {
         val db: SQLiteDatabase = readableDatabase
         val query = "SELECT nombreUsuario, password FROM usuario WHERE " +
                 "nombreUsuario = '${username}' and password = '${password}'"

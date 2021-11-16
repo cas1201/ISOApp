@@ -77,4 +77,5 @@
     <string name="limitemal">Incorrect boundary </string>
     <string name="testsave">Saved Test</string>
     <string name="excluded">Your account has been blocked and you will not be able to access it again</string>
+    <string name="correoinvalido">Invalid email</string>
 </resources>

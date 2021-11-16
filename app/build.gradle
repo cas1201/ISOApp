@@ -18,7 +18,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         python {
-            buildPython "C:/Users/alsam/AppData/Local/Programs/Python/Python38/python.exe"
+            buildPython "C:/Users/mikim/AppData/Local/Programs/Python/Python310/python.exe"
 
             pip {
                 install "python-binance"

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="title_activity_main" />
     <string name="app_name">EASY HODLING</string>
     <string name="logo">EasyHodling logo</string>
@@ -76,5 +76,6 @@
     <string name="limitemal">Límite incorrecto</string>
     <string name="testsave">Test guardado con éxito</string>
     <string name="excluded">Tu cuenta ha sido bloqueada y no podrá volver a acceder</string>
+    <string name="correoinvalido">Correo invalido</string>
 
 </resources>

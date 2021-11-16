@@ -15,7 +15,7 @@ class LoginViewModel: ViewModel() {
         if (username.isEmpty() || password.isEmpty())
             return 0
 
-        return if (handler.getUserFromDBLogin(username, password))
+        return if (handler.getUserFromDBLogin(username))
             2
         else
             1
