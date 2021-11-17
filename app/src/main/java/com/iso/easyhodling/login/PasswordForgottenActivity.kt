@@ -1,19 +1,18 @@
 package com.iso.easyhodling.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityPasswordForgottenBinding
-import com.google.firebase.auth.FirebaseAuth
 import java.util.*
-import com.google.android.gms.tasks.OnCompleteListener
 
 class PasswordForgottenActivity : AppCompatActivity() {
 
@@ -49,21 +48,20 @@ class PasswordForgottenActivity : AppCompatActivity() {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
     }
-/* clase que modificar
-    fun sendEmail(view: View) {
+
+  /*  fun sendEmail(view: View) {
         //FirebaseAuth auth = FirebaseAuth.getInstance()
         val email = binding.editTextTextEmailAddress.text.toString()
 
         val addOnCompleteListener = auth.sendPasswordResetEmail(email)
             .addOnCompleteListener(com.google.android.gms.tasks.OnCompleteListener {
+                var onComplete: Unit(Task<Void>task)
                 if (task.isSuccessful()) {
                     Toast.makeText(this,"Correo enviado!", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish()
-                }else {
-                    Toast.makeText(this,"Correo invalido!", Toast.LENGTH_SHORT).show())
-                }
-    }*/
+                }else Toast.makeText(this,"Correo invalido!", Toast.LENGTH_SHORT).show()
+    })*/
 
         /* para ir al login, TAMBIÉN VALDRÍA ESTA OPCIÓN
          fun gotoLogin(view:View){
