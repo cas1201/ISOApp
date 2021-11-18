@@ -43,10 +43,10 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
     }
 
     // Funcion para comprobar los datos de un usuario que intenta iniciar sesion
-    fun getUserFromDBLogin(username: String): Boolean {
+    fun getUserFromDBLogin(username: String, password: String): Boolean {
         val db: SQLiteDatabase = readableDatabase
         val query = "SELECT nombreUsuario, password FROM usuario WHERE " +
-                "nombreUsuario = '${username}' and password = '${password}'"
+                "nombreUsuario = '${username}' and password = '$(password)'"
         val cursor = db.rawQuery(query, null)
 
         if (cursor.count <= 0){

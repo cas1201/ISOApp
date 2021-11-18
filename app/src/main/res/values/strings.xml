@@ -14,6 +14,7 @@
     <string name="menu_wallet">Cartera</string>
     <string name="menu_help">Ayuda</string>
     <string name="menu_forum">Foro</string>
+    <string name="menu_trading">Trading</string>
     <string name="menu_about">Sobre nosotros</string>
 
     <!--Hints-->
@@ -38,6 +39,7 @@
     <string name="apis">Apis</string>
     <string name="params">Parámetros</string>
     <string name="forum">Foro</string>
+    <string name="tradingbt">Cursos Trading</string>
     <string name="exclusion">AutoExclusión</string>
     <string name="forgotpswd">Recuperar contraseña</string>
 
@@ -77,5 +79,6 @@
     <string name="testsave">Test guardado con éxito</string>
     <string name="excluded">Tu cuenta ha sido bloqueada y no podrá volver a acceder</string>
     <string name="correoinvalido">Correo invalido</string>
+    <string name="email_blank">No puede estar el correo vacío</string>
 
 </resources>

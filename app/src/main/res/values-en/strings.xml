@@ -15,6 +15,7 @@
     <string name="menu_wallet">Wallet</string>
     <string name="menu_help">Help</string>
     <string name="menu_forum">Forum</string>
+    <string name="menu_trading">Trading</string>
     <string name="menu_about">About us</string>
 
     <!--Hints-->
@@ -39,6 +40,7 @@
     <string name="params">Params</string>
     <string name="forum">Forum</string>
     <string name="exclusion">Self-exclusion</string>
+    <string name="tradingbt">Trading Courses</string>
     <string name="forgotpswd">Password recovery</string>
 
     <!--Test-->
@@ -78,4 +80,5 @@
     <string name="testsave">Saved Test</string>
     <string name="excluded">Your account has been blocked and you will not be able to access it again</string>
     <string name="correoinvalido">Invalid email</string>
+    <string name="email_blank">There can\'t be a empty email</string>
 </resources>
