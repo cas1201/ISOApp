@@ -34,7 +34,7 @@ class ForumFragment : Fragment() {
         val root: View = binding.root
 
         val forumBtn = binding.forumBtn
-        val url = "https://easyholdling.foroactivo.com/"
+        val url = "https://groups.google.com/g/hodling"
         val uri = Uri.parse(url)
         forumBtn.setOnClickListener {startActivity(Intent(Intent.ACTION_VIEW,uri))}
 
