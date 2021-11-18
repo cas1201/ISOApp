@@ -54,7 +54,7 @@
                 android:id="@+id/signinBt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="25dp"
                 android:onClick="goToMain"
                 android:text="@string/signin_bt" />
 
@@ -66,7 +66,7 @@
                 android:onClick="goToCreateAccount"
                 android:text="@string/signup_bt" />
             <Button
-                android:id="@+id/forgotpw"
+                android:id="@+id/forgotpswd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
