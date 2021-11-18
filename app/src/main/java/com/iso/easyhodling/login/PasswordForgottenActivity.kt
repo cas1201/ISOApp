@@ -48,21 +48,20 @@ class PasswordForgottenActivity : AppCompatActivity() {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
     }
+//probar si funciona
+  fun sendEmail(view: View) {
+      //authFirebaseAuth.getInstance()
 
-  /*  fun sendEmail(view: View) {
-        //FirebaseAuth auth = FirebaseAuth.getInstance()
-        val email = binding.editTextTextEmailAddress.text.toString()
-
-        val addOnCompleteListener = auth.sendPasswordResetEmail(email)
-            .addOnCompleteListener(com.google.android.gms.tasks.OnCompleteListener {
-                var onComplete: Unit(Task<Void>task)
-                if (task.isSuccessful()) {
-                    Toast.makeText(this,"Correo enviado!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    finish()
-                }else Toast.makeText(this,"Correo invalido!", Toast.LENGTH_SHORT).show()
-    })*/
-
+      val email = binding.editTextTextEmailAddress.text.toString()
+      val addOnCompleteListener = auth.sendPasswordResetEmail(email)
+          .addOnCompleteListener(this) { task ->
+              if (task.isSuccessful) {
+                  Toast.makeText(this , "Correo enviado!" , Toast.LENGTH_SHORT).show()
+                  startActivity(Intent(this , LoginActivity::class.java))
+                  finish()
+              } else Toast.makeText(this , "Correo invalido!" , Toast.LENGTH_SHORT).show()
+          }
+  }
         /* para ir al login, TAMBIÉN VALDRÍA ESTA OPCIÓN
          fun gotoLogin(view:View){
              startActivity(Intent(this, LoginActivity::class.java))
@@ -73,7 +72,7 @@ class PasswordForgottenActivity : AppCompatActivity() {
      */
 
 
-//OTRA FORMA DE HACERLO
+//-------------------OTRA FORMA DE HACERLO---------------------//
 /* fun sendEmail(view: View){
         FirebaseAuth auth = FirebaseAuth.getInstance()
         val email = binding.editTextTextEmailAddress.text.toString()
@@ -81,16 +80,17 @@ class PasswordForgottenActivity : AppCompatActivity() {
         auth.sendPasswordResetEmail()
     }
    // función para la verificación
-   private fun sendEmailVerification() {
+   fun sendEmailVerification() {
 
         val user = auth.currentUser!!
         user.sendEmailVerification()
             .addOnCompleteListener(this) { task ->
                 // manda la verificación del email
             }
-*/
-    }
+   }*/
 
     //funcion de volver en caso de haber pinchado en recuperar contraseña sin querer en el login, hacer una función para el botón de back
 
 }
+
+
