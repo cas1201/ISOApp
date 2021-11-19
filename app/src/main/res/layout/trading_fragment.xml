@@ -21,7 +21,7 @@
             app:srcCompat="@mipmap/ic_launcher_foreground" />
 
         <Button
-            android:id="@+id/tradingbt"
+            android:id="@+id/tradingBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="goToMain"

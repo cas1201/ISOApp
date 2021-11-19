@@ -29,10 +29,10 @@ class TradingFragment: Fragment() {
         _binding = TradingFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val tradingbt = binding.tradingbt
+        val tradingBtn = binding.tradingBtn
         val url = "https://youtube.com/playlist?list=PLCeSt7rbotL-DHZfkGE6L2qohhKVGm7ss"
         val uri = Uri.parse(url)
-        tradingbt.setOnClickListener {startActivity(Intent(Intent.ACTION_VIEW,uri))}
+        tradingBtn.setOnClickListener {startActivity(Intent(Intent.ACTION_VIEW,uri))}
 
         return root
 
