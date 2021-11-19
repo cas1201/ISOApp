@@ -1,5 +1,6 @@
 package com.iso.easyhodling.login
 
+import Criptography
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
@@ -26,8 +27,7 @@ class CreateAccountViewModel: ViewModel() {
                     .show()
                 false
             } else {
-                val passwordEncrypted = Encryptor().encrypt(password, "iso")
-                Encryptor().encrypt(password, "iso")
+                val passwordEncrypted = Criptography().encrypt(password)
                 handler.addUserToDB(context, username, name, surname, email, passwordEncrypted)
                 Toast.makeText(context, R.string.user_created, Toast.LENGTH_SHORT).show()
                 true
