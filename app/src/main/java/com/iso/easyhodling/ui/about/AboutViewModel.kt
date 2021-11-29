@@ -1,13 +1,11 @@
 package com.iso.easyhodling.ui.about
 
+import android.provider.Settings.Global.getString
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.iso.easyhodling.R
 
 class AboutViewModel: ViewModel(){
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is about Fragment"
-    }
-    val text: LiveData<String> = _text
 }

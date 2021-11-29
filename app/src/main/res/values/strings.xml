@@ -26,7 +26,20 @@
     <string name="email">Email</string>
     <string name="percentage">Porcentaje</string>
     <string name="limit">Límite</string>
+    <string name="api_key">Api key</string>
+    <string name="api_secret">Api secret</string>
 
+    <!--Textos-->
+    <string name="total_wallet">TOTAL $ EN WALLET:</string>
+    <string name="coin_type">MONEDA</string>
+    <string name="dollar_quantity">$</string>
+    <string name="coin_quantity">CANTIDAD DE MONEDA</string>
+    <string name="help">Para consultas sobre la aplicación o sobre como operar, contactar con \n<b>gonzaloechevarria5@gmail.com</b>.\nGracias.</string>
+    <string name="about_us">Somos el grupo 2 de la asignatura de Ingeniería del Software.\nSe ha desarrollado la app siguiendo la metodología explicada a lo largo de la asignatura.\n\nEl grupo se compone de:\n
+    Samuel Aragonés\n
+    Gonzalo Echevarría\n
+    Elisa Coellon\n
+    Miguel Melero</string>
 
     <!--Botones-->
     <string name="signin_bt">Entrar</string>

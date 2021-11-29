@@ -6,12 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.iso.easyhodling.databinding.FragmentParamsBinding
+import com.iso.easyhodling.databinding.ApisFragmentBinding
 
-class ParamsFragment : Fragment() {
-
-    private lateinit var paramsViewModel: ParamsViewModel
-    private var _binding: FragmentParamsBinding? = null
+class ApisFragment : Fragment() {
+    private lateinit var apisViewModel: ApisViewModel
+    private var _binding: ApisFragmentBinding? = null
 
     private val binding get() = _binding!!
 
@@ -19,10 +18,10 @@ class ParamsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        paramsViewModel =
-            ViewModelProvider(this).get(ParamsViewModel::class.java)
+        apisViewModel =
+            ViewModelProvider(this).get(ApisViewModel::class.java)
 
-        _binding = FragmentParamsBinding.inflate(inflater, container, false)
+        _binding = ApisFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         return root
@@ -32,4 +31,5 @@ class ParamsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

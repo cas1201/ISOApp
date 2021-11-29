@@ -26,11 +26,25 @@
     <string name="surname">Last Name</string>
     <string name="email">Email</string>
     <string name="percentage">Percentage</string>
-    <string name="limit">limit</string>
+    <string name="limit">Limit</string>
+    <string name="api_key">Api key</string>
+    <string name="api_secret">Api secret</string>
+
+    <!--Textos-->
+    <string name="coin_type">COIN</string>
+    <string name="dollar_quantity">$</string>
+    <string name="coin_quantity">COIN QUANTITY</string>
+    <string name="total_wallet">$ TOTAL IN WALLET:</string>
+    <string name="help">If you have some questions about the app or how to operate, contact with \n<b>gonzaloechevarria5@gmail.com</b>.\nThank you.</string>
+    <string name="about_us">We are group 2 of Software Engineering subject.\nThis app has been developed following the metodology explained along the course.\n\nThe group is composed by:\n
+    Samuel Aragonés\n
+    Gonzalo Echevarría\n
+    Elisa Coello\n
+    Miguel Melero</string>
 
     <!--Botones-->
     <string name="signin_bt">Sign in</string>
-    <string name="signup_bt">Sing up</string>
+    <string name="signup_bt">Sign up</string>
     <string name="back">Back</string>
     <string name="config">Settings</string>
     <string name="save">Save</string>
@@ -81,4 +95,5 @@
     <string name="excluded">Your account has been blocked and you will not be able to access it again</string>
     <string name="correoinvalido">Invalid email</string>
     <string name="email_blank">There can\'t be a empty email</string>
+
 </resources>

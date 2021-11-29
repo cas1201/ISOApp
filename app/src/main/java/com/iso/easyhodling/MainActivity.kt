@@ -14,7 +14,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.iso.easyhodling.EasyHodlingApp.Companion.prefs
 import com.iso.easyhodling.databinding.ActivityMainBinding
-import com.iso.easyhodling.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,10 +64,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    // Funcion para el comportamiento del boton atras en la pantalla de inicio
-    override fun onBackPressed() {
-        startActivity(Intent(this, LoginActivity::class.java))
     }
 }

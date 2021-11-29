@@ -28,8 +28,8 @@ class ConfigFragment : Fragment() {
         _binding = FragmentConfigBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val paramsBtn = binding.paramsBtn
-        paramsBtn.setOnClickListener { Navigation.findNavController(root).navigate(R.id.nav_to_params)}
+        binding.paramsBtn.setOnClickListener { Navigation.findNavController(root).navigate(R.id.nav_to_params)}
+        binding.apisBtn.setOnClickListener { Navigation.findNavController(root).navigate(R.id.nav_to_apis)}
 
         return root
     }

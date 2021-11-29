@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.iso.easyhodling.EasyHodlingApp.Companion.binanceCoins
 import com.iso.easyhodling.EasyHodlingApp.Companion.prefs
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityLoginBinding
@@ -30,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
+        println(binanceCoins.keys)
 
         /*
         Los valores que puede tomar la variable 'checkerresponse' son:

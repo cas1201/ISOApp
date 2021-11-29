@@ -32,14 +32,12 @@
                 android:id="@+id/apisBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="goToMain"
                 android:text="@string/apis" />
             <Button
                 android:id="@+id/paramsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:onClick="goToCreateAccount"
                 android:text="@string/params" />
         </LinearLayout>
 

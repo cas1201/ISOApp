@@ -30,7 +30,7 @@ class TradingFragment: Fragment() {
         val root: View = binding.root
 
         val tradingBtn = binding.tradingBtn
-        val url = "https://youtube.com/playlist?list=PLCeSt7rbotL-DHZfkGE6L2qohhKVGm7ss"
+        val url = "https://academy.binance.com/es"
         val uri = Uri.parse(url)
         tradingBtn.setOnClickListener {startActivity(Intent(Intent.ACTION_VIEW,uri))}
 

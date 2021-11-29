@@ -19,57 +19,55 @@ class PasswordForgottenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPasswordForgottenBinding
     private lateinit var passwordForgottenViewModel: PasswordForgottenViewModel
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPasswordForgottenBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_password_forgotten)
-        passwordForgottenViewModel= ViewModelProvider(this).get(PasswordForgottenViewModel::class.java)
+        passwordForgottenViewModel =
+            ViewModelProvider(this).get(PasswordForgottenViewModel::class.java)
         // INCLUIR EL BOTON
-    // editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress)
+        // editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress)
 
     }
-    fun onClick(view: View){
-    validate()
+
+    fun onClick(view: View) {
+        validate()
     }
 
     //validar si el email es válido
     fun validate() {
         val email = binding.editTextTextEmailAddress.text.toString()
 
-        if ((email.isEmpty()) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if ((email.isEmpty()) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, R.string.correoinvalido, Toast.LENGTH_SHORT).show()
         }
         //sendEmail(email)
 
     }
-    //Flecha para que se vaya al Login activity en caso que le de sin querer
-    override fun onBackPressed() {
-        super.onBackPressed()
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
+
+    //probar si funciona
+    fun sendEmail(view: View) {
+        //authFirebaseAuth.getInstance()
+
+        val email = binding.editTextTextEmailAddress.text.toString()
+        val addOnCompleteListener = auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Correo enviado!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                } else Toast.makeText(this, "Correo invalido!", Toast.LENGTH_SHORT).show()
+            }
     }
-//probar si funciona
-  fun sendEmail(view: View) {
-      //authFirebaseAuth.getInstance()
+    /* para ir al login, TAMBIÉN VALDRÍA ESTA OPCIÓN
+     fun gotoLogin(view:View){
+         startActivity(Intent(this, LoginActivity::class.java))
+         finish()
+     }
+     //https://firebase.google.com/docs/android/setup?hl=es PARA TERMINAR LO DE MANDAR EMAIL
 
-      val email = binding.editTextTextEmailAddress.text.toString()
-      val addOnCompleteListener = auth.sendPasswordResetEmail(email)
-          .addOnCompleteListener(this) { task ->
-              if (task.isSuccessful) {
-                  Toast.makeText(this , "Correo enviado!" , Toast.LENGTH_SHORT).show()
-                  startActivity(Intent(this , LoginActivity::class.java))
-                  finish()
-              } else Toast.makeText(this , "Correo invalido!" , Toast.LENGTH_SHORT).show()
-          }
-  }
-        /* para ir al login, TAMBIÉN VALDRÍA ESTA OPCIÓN
-         fun gotoLogin(view:View){
-             startActivity(Intent(this, LoginActivity::class.java))
-             finish()
-         }
-         //https://firebase.google.com/docs/android/setup?hl=es PARA TERMINAR LO DE MANDAR EMAIL
-
-     */
+ */
 
 
 //-------------------OTRA FORMA DE HACERLO---------------------//

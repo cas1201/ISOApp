@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment() {
@@ -30,10 +31,8 @@ class AboutFragment : Fragment() {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textAbout
-        aboutViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        binding.textAbout.text = getString(R.string.about_us)
+
         return root
     }
 
