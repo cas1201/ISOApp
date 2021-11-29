@@ -27,6 +27,7 @@
     <string name="email">Email</string>
     <string name="percentage">Percentage</string>
     <string name="limit">Limit</string>
+    <string name="coin_par">Coin par</string>
     <string name="api_key">Api key</string>
     <string name="api_secret">Api secret</string>
 

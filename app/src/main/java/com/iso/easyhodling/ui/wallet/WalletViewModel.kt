@@ -1,15 +1,15 @@
 package com.iso.easyhodling.ui.wallet
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.iso.easyhodling.EasyHodlingApp.Companion.binanceCoins
+import com.iso.easyhodling.ShPrefs
 
 class WalletViewModel: ViewModel() {
-    fun monedas(moneda: Int): Int{
+    fun monedas(context: Context, moneda: Int): Int {
         var cantidad = 0
+        val binanceCoins = ShPrefs(context).getBinance()
 
-        when(moneda){
+        when (moneda) {
             1 -> cantidad = binanceCoins["BTC"]!!
             2 -> cantidad = binanceCoins["ETH"]!!
             3 -> cantidad = binanceCoins["SHIB"]!!

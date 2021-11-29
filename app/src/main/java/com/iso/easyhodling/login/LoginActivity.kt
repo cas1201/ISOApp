@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.iso.easyhodling.EasyHodlingApp.Companion.binanceCoins
 import com.iso.easyhodling.EasyHodlingApp.Companion.prefs
 import com.iso.easyhodling.R
+import com.iso.easyhodling.ShPrefs
 import com.iso.easyhodling.databinding.ActivityLoginBinding
 import com.iso.easyhodling.survey.SurveyActivity
 import kotlin.math.log
@@ -31,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
-        println(binanceCoins.keys)
 
         /*
         Los valores que puede tomar la variable 'checkerresponse' son:
@@ -41,6 +40,8 @@ class LoginActivity : AppCompatActivity() {
         */
         val checkerResponse = loginViewModel.loginChecker(this, username, password)
         loginResponse(checkerResponse)
+        loginViewModel.binanceStarter(this)
+        println(ShPrefs(this).getBinance())
     }
 
     // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login

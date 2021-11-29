@@ -10,7 +10,9 @@
         android:id="@+id/logo"
         android:layout_width="190dp"
         android:layout_height="90dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -60,7 +62,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +74,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/coinPar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="@string/coin_par"
+                android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/percentajeText"
@@ -105,4 +115,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btexclus" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
