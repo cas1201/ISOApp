@@ -23,16 +23,4 @@ class LoginViewModel: ViewModel() {
         else
             1
     }
-
-    fun binanceStarter(context: Context){
-        try {
-            ShPrefs(context).getBinance()
-        }catch (e: NullPointerException){
-             var coins = mutableMapOf("BTC" to 10, "ETH" to 10, "SHIB" to 1000, "THC" to 50000,
-                "ADA" to 4000, "DOT" to 100, "SOL" to 300, "BNB" to 500, "LTC" to 1000)
-
-            ShPrefs(context).saveBinance(coins)
-        }
-
-    }
 }

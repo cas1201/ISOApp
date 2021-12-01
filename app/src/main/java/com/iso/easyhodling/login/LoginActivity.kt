@@ -40,8 +40,6 @@ class LoginActivity : AppCompatActivity() {
         */
         val checkerResponse = loginViewModel.loginChecker(this, username, password)
         loginResponse(checkerResponse)
-        loginViewModel.binanceStarter(this)
-        println(ShPrefs(this).getBinance())
     }
 
     // Funcion para el comportamiento del boton de crear cuenta en la pantalla de login

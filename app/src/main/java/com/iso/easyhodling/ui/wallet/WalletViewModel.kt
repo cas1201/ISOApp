@@ -1,25 +1,48 @@
 package com.iso.easyhodling.ui.wallet
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.iso.easyhodling.ShPrefs
+import com.iso.easyhodling.Binance
+import com.iso.easyhodling.Coin
+import java.math.BigDecimal
+import java.math.RoundingMode
 
-class WalletViewModel: ViewModel() {
-    fun monedas(context: Context, moneda: Int): Int {
-        var cantidad = 0
-        val binanceCoins = ShPrefs(context).getBinance()
+class WalletViewModel : ViewModel() {
 
-        when (moneda) {
-            1 -> cantidad = binanceCoins["BTC"]!!
-            2 -> cantidad = binanceCoins["ETH"]!!
-            3 -> cantidad = binanceCoins["SHIB"]!!
-            4 -> cantidad = binanceCoins["THC"]!!
-            5 -> cantidad = binanceCoins["ADA"]!!
-            6 -> cantidad = binanceCoins["DOT"]!!
-            7 -> cantidad = binanceCoins["SOL"]!!
-            8 -> cantidad = binanceCoins["BNB"]!!
-            9 -> cantidad = binanceCoins["LTC"]!!
+    val binance = Binance()
+
+    fun crearListaMonedas(): MutableList<Coin> {
+        val listaMonedas = mutableListOf<Coin>()
+        val monedas = binance.getAccount().keys.toList()
+
+        listaMonedas.add(Coin("Total $ wallet", "", calcularTotalWallet().toString()))
+        listaMonedas.add(Coin("Moneda", "Cantidad", "Cantidad en"))
+
+        for (i in binance.getAccount().keys.indices) {
+            listaMonedas.add(
+                i + 2,
+                Coin(
+                    monedas[i],
+                    binance.getAssetBalance(monedas[i]).toString(),
+                    calcularValorMonedaEnWallet(monedas[i]).toString()
+                )
+            )
         }
-        return cantidad
+        return listaMonedas
+    }
+
+    fun calcularTotalWallet(): BigDecimal {
+        var total = 0.0
+
+        for (i in binance.getAccount().keys.indices) {
+            var moneda = binance.getAccount().keys.toList()[i]
+            total += binance.getAssetPrice(moneda).toDouble()
+        }
+        return total.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN)
+    }
+
+    fun calcularValorMonedaEnWallet(moneda: String): BigDecimal? {
+        return binance.getAssetBalance(moneda)?.times(binance.getAssetPrice(moneda).toDouble())
+            ?.toBigDecimal()
+
     }
 }
