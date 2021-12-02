@@ -8,11 +8,14 @@ import java.math.RoundingMode
 
 class WalletViewModel : ViewModel() {
 
-    val binance = Binance()
+    var binance = Binance
+    var listaMonedas = mutableListOf<Coin>()
 
-    fun crearListaMonedas(): MutableList<Coin> {
-        val listaMonedas = mutableListOf<Coin>()
+    fun crearListaMonedas() {
         val monedas = binance.getAccount().keys.toList()
+
+        if (listaMonedas.isNotEmpty())
+            listaMonedas.clear()
 
         listaMonedas.add(Coin("Total $ wallet", "", calcularTotalWallet().toString()))
         listaMonedas.add(Coin("Moneda", "Cantidad", "Cantidad en"))
@@ -22,27 +25,31 @@ class WalletViewModel : ViewModel() {
                 i + 2,
                 Coin(
                     monedas[i],
-                    binance.getAssetBalance(monedas[i]).toString(),
-                    calcularValorMonedaEnWallet(monedas[i]).toString()
+                    redondear8Decimales(binance.getAssetBalance(monedas[i]), 8),
+                    redondear8Decimales(calcularValorMonedaEnWallet(monedas[i]), 2)
                 )
             )
         }
-        return listaMonedas
     }
 
     fun calcularTotalWallet(): BigDecimal {
         var total = 0.0
 
         for (i in binance.getAccount().keys.indices) {
-            var moneda = binance.getAccount().keys.toList()[i]
+            val moneda = binance.getAccount().keys.toList()[i]
             total += binance.getAssetPrice(moneda).toDouble()
         }
         return total.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN)
     }
 
-    fun calcularValorMonedaEnWallet(moneda: String): BigDecimal? {
+    fun calcularValorMonedaEnWallet(moneda: String): Double? {
         return binance.getAssetBalance(moneda)?.times(binance.getAssetPrice(moneda).toDouble())
-            ?.toBigDecimal()
+    }
 
+    fun redondear8Decimales(cantidad: Double?, decimales: Int): String{
+        return if (cantidad!!<1)
+            cantidad.toBigDecimal().setScale(decimales, RoundingMode.HALF_EVEN).stripTrailingZeros().toString()
+        else
+            cantidad.toBigDecimal().setScale(decimales, RoundingMode.HALF_EVEN).toString()
     }
 }

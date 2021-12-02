@@ -1,6 +1,6 @@
 package com.iso.easyhodling
 
-class Binance {
+object Binance {
     private val coins = mutableMapOf(
         "BTC" to 5.0,
         "ETH" to 10.0,

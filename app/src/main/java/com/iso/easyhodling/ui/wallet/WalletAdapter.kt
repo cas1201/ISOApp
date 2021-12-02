@@ -8,14 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.iso.easyhodling.Coin
 import com.iso.easyhodling.R
 
-class WalletAdapter(val _wallet: MutableList<Coin>) :
+class WalletAdapter(val wallet: MutableList<Coin>) :
     RecyclerView.Adapter<WalletAdapter.WalletViewHolder>() {
-
-    var wallet: MutableList<Coin> = _wallet
-        set(value){
-            field = value
-            notifyDataSetChanged()
-        }
 
     inner class WalletViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         fun updateWalletList(coin: Coin) {

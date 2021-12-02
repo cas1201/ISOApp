@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.iso.easyhodling.Binance
 import com.iso.easyhodling.databinding.FragmentParamsBinding
+import com.iso.easyhodling.ui.wallet.WalletViewModel
 
 class ParamsFragment : Fragment() {
 
@@ -26,22 +27,16 @@ class ParamsFragment : Fragment() {
         _binding = FragmentParamsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //binding.save.setOnClickListener { operate() } //prueba de metodos de BINANCE
+        binding.save.setOnClickListener { operate() } //prueba de metodos de BINANCE
 
         return root
     }
 
-/*
     fun operate(){
-        val binance = Binance()
-        println(binance.getAccount())
+        val binance = Binance
         binance.marketOrderBuy("BTC", "ETH", 2.0)
-        println(binance.getAccount())
-        //binance.marketOrderSell("ETH", "BTC",2.0)
-        //println(binance.getAccount())
     }
 
- */
 
 
     override fun onDestroyView() {
