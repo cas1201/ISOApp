@@ -30,6 +30,9 @@
     <string name="coin_par">Coin par</string>
     <string name="api_key">Api key</string>
     <string name="api_secret">Api secret</string>
+    <string name="coin_to_operate">Coin to operate…</string>
+    <string name="coin_to_use">Coin to use…</string>
+    <string name="quantity">Quantity with decimals</string>
 
     <!--Textos-->
     <string name="coin_type">COIN</string>
@@ -57,6 +60,8 @@
     <string name="exclusion">Self-exclusion</string>
     <string name="tradingbt">Trading Courses</string>
     <string name="forgotpswd">Password recovery</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
 
     <!--Test-->
     <!--PREGUNTAS-->

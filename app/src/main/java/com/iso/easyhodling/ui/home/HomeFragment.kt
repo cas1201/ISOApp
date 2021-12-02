@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.iso.easyhodling.databinding.FragmentHomeBinding
 
@@ -30,10 +28,20 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        /*
+        val assetToUse = binding.monedaParaUsar.text.toString().uppercase()
+        val assetToOperate = binding.monedaAOperar.text.toString().uppercase()
+        val quantity = binding.quantity.text.toString().toDouble()
+
+        if (binding.buyButton.callOnClick()){
+            homeViewModel.buy(assetToUse, assetToOperate, quantity)
+            binding.operationText.text = "Se ha comprado $quantity de $assetToOperate!!"
+        }
+        else if (binding.sellButton.callOnClick()){
+            homeViewModel.sell(assetToOperate, assetToUse, quantity)
+            binding.operationText.text = "Se ha vendido $quantity de $assetToOperate!!"
+        }
+         */
 
         return root
     }

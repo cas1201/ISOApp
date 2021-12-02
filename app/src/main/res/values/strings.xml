@@ -29,6 +29,9 @@
     <string name="coin_par">Par de moneda</string>
     <string name="api_key">Api key</string>
     <string name="api_secret">Api secret</string>
+    <string name="coin_to_operate">Moneda a operar…</string>
+    <string name="coin_to_use">Moneda a usar…</string>
+    <string name="quantity">Cantidad con decimales</string>
 
     <!--Textos-->
     <string name="total_wallet">TOTAL $ EN WALLET:</string>
@@ -56,6 +59,8 @@
     <string name="tradingbt">Cursos Trading</string>
     <string name="exclusion">AutoExclusión</string>
     <string name="forgotpswd">Recuperar contraseña</string>
+    <string name="buy">Comprar</string>
+    <string name="sell">Vender</string>
 
     <!--Test-->
     <!--PREGUNTAS-->

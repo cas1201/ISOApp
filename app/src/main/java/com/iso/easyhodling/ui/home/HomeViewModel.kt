@@ -1,13 +1,16 @@
 package com.iso.easyhodling.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.iso.easyhodling.Binance
 
 class HomeViewModel : ViewModel() {
+    val binance = Binance
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    fun buy(assetToSell: String, assetToBuy: String, quantityToBuy: Double){
+        binance.marketOrderBuy(assetToSell, assetToBuy, quantityToBuy)
     }
-    val text: LiveData<String> = _text
+
+    fun sell(assetToSell: String, assetToBuy: String, quantityToBuy: Double){
+        binance.marketOrderBuy(assetToSell, assetToBuy, quantityToBuy)
+    }
 }
