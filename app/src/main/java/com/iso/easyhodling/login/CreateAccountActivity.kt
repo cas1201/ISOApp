@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.util.PatternsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityCreateAccountBinding
 
 class CreateAccountActivity : AppCompatActivity() {
@@ -30,6 +33,11 @@ class CreateAccountActivity : AppCompatActivity() {
         val password = binding.passwordText.text.toString()
         val passwordrepeat = binding.passwordrepText.text.toString()
         //comparar contraseñas al crear cuenta, tb se puede con equals
+        if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(this, R.string.email_error, Toast.LENGTH_SHORT)
+                .show()
+            false
+        }
         if (password == passwordrepeat) {
 
             if (createAccountViewModel.createUser(

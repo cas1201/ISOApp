@@ -92,6 +92,7 @@
     <string name="loginerror_blank">Empty username or password</string>
     <string name="loginerror_credentials">Incorrect username or password</string>
     <string name="loginerror_existing_user">Username or email not available…</string>
+    <string name="email_error">Incorect email</string>
     <string name="user_created">User created!</string>
     <string name="sign_up_blank">There can be no empty field…</string>
     <string name="user_db_recover_error">Error while recovering user from database</string>

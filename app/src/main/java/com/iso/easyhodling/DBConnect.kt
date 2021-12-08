@@ -15,11 +15,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("CREATE TABLE usuario(nombreUsuario varchar(15) primary key not null," +
-                "nombre varchar(20) not null," +
-                "apellidos varchar(40)," +
-                "email varchar(40) not null unique," +
-                "password varchar(15) not null)")
+        db?.execSQL("create table usuario(nombreUsuario varchar(15) primary key not null, nombre varchar(20) not null,apellidos varchar(40),email varchar(40) not null unique,password varchar(15) not null)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -39,7 +35,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         //ENCRIPTAR CONTRASEÑA
         //https://code.tutsplus.com/es/tutorials/storing-data-securely-on-android--cms-30558
         db.insert("usuario", null, values)
-        db.close()
+        //db.close()
     }
 
     // Funcion para comprobar los datos de un usuario que intenta iniciar sesion
