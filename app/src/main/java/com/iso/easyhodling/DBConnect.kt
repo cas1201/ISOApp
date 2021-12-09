@@ -23,8 +23,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
     }
 
     // Funcion para añadir un nuevo usuario a la base de datos
-    fun addUserToDB (context: Context, name: String, surname: String, username: String,
-                     email: String, password: String){
+    fun addUserToDB (context: Context, username: String, name: String, surname: String, email: String, password: String){
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
         values.put("nombreUsuario", username)
@@ -35,7 +34,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         //ENCRIPTAR CONTRASEÑA
         //https://code.tutsplus.com/es/tutorials/storing-data-securely-on-android--cms-30558
         db.insert("usuario", null, values)
-        //db.close()
+        db.close()
     }
 
     // Funcion para comprobar los datos de un usuario que intenta iniciar sesion

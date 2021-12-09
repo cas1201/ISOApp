@@ -43,16 +43,17 @@
                 android:ems="10"
                 android:hint="@string/user"
                 android:inputType="textPersonName"
+                android:layout_marginTop="25dp"
                 android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/nameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:ems="10"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
+                android:layout_marginTop="25dp"
                 android:minHeight="48dp" />
 
             <EditText
