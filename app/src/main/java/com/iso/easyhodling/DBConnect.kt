@@ -31,8 +31,7 @@ class DBConnect(context: Context) : SQLiteOpenHelper(context, dbname, factory, v
         values.put("apellidos", surname)
         values.put("email", email)
         values.put("password", password)
-        //ENCRIPTAR CONTRASEÑA
-        //https://code.tutsplus.com/es/tutorials/storing-data-securely-on-android--cms-30558
+
         db.insert("usuario", null, values)
         db.close()
     }

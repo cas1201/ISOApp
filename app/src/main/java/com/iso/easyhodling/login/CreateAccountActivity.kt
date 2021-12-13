@@ -9,6 +9,9 @@ import androidx.core.util.PatternsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityCreateAccountBinding
+import java.lang.StringBuilder
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 class CreateAccountActivity : AppCompatActivity() {
 
@@ -30,14 +33,17 @@ class CreateAccountActivity : AppCompatActivity() {
         val name = binding.nameText.text.toString()
         val surname = binding.surnameText.text.toString()
         val email = binding.emailText.text.toString()
-        val password = binding.passwordText.text.toString()
+        var password = binding.passwordText.text.toString()
         val passwordrepeat = binding.passwordrepText.text.toString()
+        val passwordEncriptado = createAccountViewModel.getMD5(password)
+
         //comparar contraseñas al crear cuenta, tb se puede con equals
-        if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, R.string.email_error, Toast.LENGTH_SHORT)
                 .show()
             false
         }
+
         if (password == passwordrepeat) {
 
             if (createAccountViewModel.createUser(
@@ -46,7 +52,7 @@ class CreateAccountActivity : AppCompatActivity() {
                     name,
                     surname,
                     email,
-                    password,
+                    passwordEncriptado,
                     passwordrepeat
                 )
             ) {
@@ -55,4 +61,5 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
     }
+
 }
