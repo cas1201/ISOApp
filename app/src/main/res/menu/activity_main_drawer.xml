@@ -23,7 +23,7 @@
         <item
             android:id="@+id/nav_trading"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_trading" />
+            android:title="@string/menu_learning" />
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_menu_help"

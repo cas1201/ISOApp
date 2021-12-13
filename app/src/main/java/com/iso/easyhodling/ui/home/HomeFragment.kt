@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
         val assetToOperate = binding.monedaAOperar.text.toString().uppercase()
         val quantity = binding.quantity.text.toString().toDouble()
 
+
         if (binding.buyButton.callOnClick()){
             homeViewModel.buy(assetToUse, assetToOperate, quantity)
             binding.operationText.text = "Se ha comprado $quantity de $assetToOperate!!"
