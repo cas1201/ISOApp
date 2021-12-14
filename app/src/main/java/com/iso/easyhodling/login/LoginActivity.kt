@@ -13,11 +13,17 @@ import com.iso.easyhodling.databinding.ActivityLoginBinding
 import com.iso.easyhodling.survey.SurveyActivity
 import kotlin.math.log
 import kotlin.properties.Delegates
-
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
+   // private lateinit var dbReference:DatabaseReference
+   // private lateinit var database:FirebaseDatabase
+   // private lateinit var auth:FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +37,12 @@ class LoginActivity : AppCompatActivity() {
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
+
+       // database= FirebaseDatabase.getInstance()
+       // auth= FirebaseAuth.getInstance()
+       // dbReference=database.reference.child("User")
+
+
 
         /*
         Los valores que puede tomar la variable 'checkerresponse' son:

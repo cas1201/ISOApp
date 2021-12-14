@@ -101,5 +101,6 @@
     <string name="excluded">Tu cuenta ha sido bloqueada y no podrá volver a acceder</string>
     <string name="correoinvalido">Correo invalido</string>
     <string name="email_blank">No puede estar el correo vacío</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>
