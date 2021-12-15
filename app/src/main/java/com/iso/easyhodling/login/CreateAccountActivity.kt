@@ -67,25 +67,24 @@ class CreateAccountActivity : AppCompatActivity() {
                     passwordrepeat
                 )
             ) {
-                auth.createUserWithEmailAndPassword(email, passwordrepeat).addOnCompleteListener(this){
-                    task ->
-                    if (task.isComplete){
-                        val user:FirebaseUser?=auth.currentUser
-                        if (user != null) {
-                            verificar(user)
+               // auth.createUserWithEmailAndPassword(email, passwordrepeat).addOnCompleteListener(this){
+                //    task ->
+                 //   if (task.isComplete){
+                   //     val user:FirebaseUser?=auth.currentUser
+                     //   if (user != null) {
+                       //     verificar(user)
 
-                            val userBD=dbReference.child(user?.uid)
-                            userBD.child("User Name").setValue(username)
-                            userBD.child("Name").setValue(name)
-                            userBD.child("Surname").setValue(surname)
-                            userBD.child("email").setValue(email)
-                            userBD.child("Password").setValue(passwordrepeat)
+                         //   val userBD=dbReference.child(user?.uid)
+                           // userBD.child("User Name").setValue(username)
+                            //userBD.child("Name").setValue(name)
+                            //userBD.child("Surname").setValue(surname)
+                            //userBD.child("email").setValue(email)
+                            // userBD.child("Password").setValue(passwordrepeat)
 
-                        }
+                      //  }
 
-                    }
+                    //}
                 }
-                //para crear un toast si se envia el email correctamente cuando se registra el usuario
 
                 }
 
@@ -94,16 +93,16 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
 
-    private fun verificar(user:FirebaseUser){
-        user.sendEmailVerification().addOnCompleteListener(this) {
-                task ->
-            if(task.isComplete){
+// private fun verificar(user:FirebaseUser){
+//   user.sendEmailVerification().addOnCompleteListener(this) {
+//           task ->
+//      if(task.isComplete){
 
-            }
-        }
+//      }
+// }
 
-    }
-}
+//  }
+//}
 
 
 

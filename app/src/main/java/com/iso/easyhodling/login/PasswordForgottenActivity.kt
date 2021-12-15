@@ -5,14 +5,11 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityPasswordForgottenBinding
-import java.util.*
 
 class PasswordForgottenActivity : AppCompatActivity() {
 
@@ -36,19 +33,19 @@ class PasswordForgottenActivity : AppCompatActivity() {
     }
 
     //validar si el email es válido
-    fun validate() {
+    private fun validate() {
         val email = binding.editTextTextEmailAddress.text.toString()
 
         if ((email.isEmpty()) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, R.string.correoinvalido, Toast.LENGTH_SHORT).show()
         }
-        //sendEmail(email)
+        sendEmail(email)
 
     }
 
     //probar si funciona
-    fun sendEmail(view: View) {
-        //authFirebaseAuth.getInstance()
+    fun sendEmail(view: String) {
+        auth= FirebaseAuth.getInstance()
 
         val email = binding.editTextTextEmailAddress.text.toString()
         val addOnCompleteListener = auth.sendPasswordResetEmail(email)
