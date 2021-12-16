@@ -1,12 +1,15 @@
 package com.iso.easyhodling.login
 
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.internal.ContextUtils.getActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.ActivityPasswordForgottenBinding
@@ -28,35 +31,16 @@ class PasswordForgottenActivity : AppCompatActivity() {
 
     }
 
-    fun onClick(view: View) {
-        validate()
-    }
-
     //validar si el email es válido
-    private fun validate() {
-        val email = binding.editTextTextEmailAddress.text.toString()
+    fun validate(view: View) {
+        val emailaddress = binding.editTextTextEmailAddress.text.toString()
 
-        if ((email.isEmpty()) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if ((emailaddress.isEmpty()) || !Patterns.EMAIL_ADDRESS.matcher(emailaddress).matches()) {
             Toast.makeText(this, R.string.correoinvalido, Toast.LENGTH_SHORT).show()
         }
-        sendEmail(email)
-
+        passwordForgottenViewModel.sendEmail(this, emailaddress)
     }
 
-    //probar si funciona
-    fun sendEmail(view: String) {
-        auth= FirebaseAuth.getInstance()
-
-        val email = binding.editTextTextEmailAddress.text.toString()
-        val addOnCompleteListener = auth.sendPasswordResetEmail(email)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Correo enviado!", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    finish()
-                } else Toast.makeText(this, "Correo invalido!", Toast.LENGTH_SHORT).show()
-            }
-    }
     /* para ir al login, TAMBIÉN VALDRÍA ESTA OPCIÓN
      fun gotoLogin(view:View){
          startActivity(Intent(this, LoginActivity::class.java))

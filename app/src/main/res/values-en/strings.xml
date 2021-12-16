@@ -46,6 +46,8 @@
     Gonzalo Echevarría\n
     Elisa Coello\n
     Miguel Melero</string>
+    <string name="welcome_text">Welcome to\nEASYHODLING</string>
+    <string name="recuperar_contrasena">Contraseña recuperada</string>
 
     <!--Botones-->
     <string name="signin_bt">Sign in</string>
@@ -103,5 +105,10 @@
     <string name="excluded">Your account has been blocked and you will not be able to access it again</string>
     <string name="correoinvalido">Invalid email</string>
     <string name="email_blank">There can\'t be a empty email</string>
+    <string name="password_dont_match">Passwords don\'t match</string>
+    <string name="buy_completed">Buy order completed!!</string>
+    <string name="sell_completed">Sell order completed!!</string>
+    <string name="insuficient_funds">Insuficient funds…</string>
+    <string name="inexistent_coin">The coin doesn\'t exists…</string>
 
 </resources>

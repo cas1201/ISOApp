@@ -20,9 +20,6 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
-   // private lateinit var dbReference:DatabaseReference
-   // private lateinit var database:FirebaseDatabase
-   // private lateinit var auth:FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,11 +34,6 @@ class LoginActivity : AppCompatActivity() {
     fun goToMain(view: View){
         val username = binding.userText.text.toString()
         val password = binding.passwordText.text.toString()
-
-       // database= FirebaseDatabase.getInstance()
-       // auth= FirebaseAuth.getInstance()
-       // dbReference=database.reference.child("User")
-
 
 
         /*

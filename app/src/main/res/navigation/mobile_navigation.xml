@@ -27,6 +27,9 @@
             app:destination="@id/nav_forum" />
         <action
             android:id="@+id/nav_to_trading_courses"
+            app:destination="@id/nav_learning" />
+        <action
+            android:id="@+id/nav_to_trading"
             app:destination="@id/nav_trading" />
     </fragment>
 
@@ -94,10 +97,10 @@
             app:destination="@id/nav_home" />
     </fragment>
     <fragment
-        android:id="@+id/nav_trading"
-        android:name="com.iso.easyhodling.ui.trading.TradingFragment"
-        android:label="@string/menu_trading"
-        tools:layout="@layout/trading_fragment" >
+        android:id="@+id/nav_learning"
+        android:name="com.iso.easyhodling.ui.learning.LearningFragment"
+        android:label="@string/menu_learning"
+        tools:layout="@layout/fragment_learning" >
         <action
             android:id="@+id/action_nav_trading_to_nav_home"
             app:destination="@id/nav_home" />
@@ -110,5 +113,14 @@
         <action
             android:id="@+id/action_apisFragment_to_nav_config"
             app:destination="@id/nav_config" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_trading"
+        android:name="com.iso.easyhodling.ui.trading.TradingFragment"
+        android:label="@string/menu_trading"
+        tools:layout="@layout/trading_fragment" >
+        <action
+            android:id="@+id/action_tradingFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

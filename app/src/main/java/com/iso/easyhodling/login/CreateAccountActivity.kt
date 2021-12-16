@@ -21,9 +21,9 @@ class CreateAccountActivity : AppCompatActivity() {
 
     private lateinit var createAccountViewModel: CreateAccountViewModel
     private lateinit var binding: ActivityCreateAccountBinding
-    private lateinit var dbReference:DatabaseReference
-    private lateinit var database:FirebaseDatabase
-    private lateinit var auth:FirebaseAuth
+    private lateinit var dbReference: DatabaseReference
+    private lateinit var database: FirebaseDatabase
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,23 +40,15 @@ class CreateAccountActivity : AppCompatActivity() {
         val name = binding.nameText.text.toString()
         val surname = binding.surnameText.text.toString()
         val email = binding.emailText.text.toString()
-        var password = binding.passwordText.text.toString()
+        val password = binding.passwordText.text.toString()
         val passwordrepeat = binding.passwordrepText.text.toString()
         val passwordEncriptado = createAccountViewModel.getMD5(password)
-        database= FirebaseDatabase.getInstance()
-        auth= FirebaseAuth.getInstance()
-        dbReference=database.reference.child("User")
 
 
-        //comparar contraseñas al crear cuenta, tb se puede con equals
-        if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, R.string.email_error, Toast.LENGTH_SHORT)
-                .show()
-            false
-        }
+
+
 
         if (password == passwordrepeat) {
-
             if (createAccountViewModel.createUser(
                     this,
                     username,
@@ -64,45 +56,14 @@ class CreateAccountActivity : AppCompatActivity() {
                     surname,
                     email,
                     passwordEncriptado,
-                    passwordrepeat
-                )
-            ) {
-               // auth.createUserWithEmailAndPassword(email, passwordrepeat).addOnCompleteListener(this){
-                //    task ->
-                 //   if (task.isComplete){
-                   //     val user:FirebaseUser?=auth.currentUser
-                     //   if (user != null) {
-                       //     verificar(user)
-
-                         //   val userBD=dbReference.child(user?.uid)
-                           // userBD.child("User Name").setValue(username)
-                            //userBD.child("Name").setValue(name)
-                            //userBD.child("Surname").setValue(surname)
-                            //userBD.child("email").setValue(email)
-                            // userBD.child("Password").setValue(passwordrepeat)
-
-                      //  }
-
-                    //}
-                }
-
-                }
-
+                    passwordrepeat)
+            ){
                 startActivity(Intent(this, LoginActivity::class.java))
-                finish()
             }
-        }
-
-// private fun verificar(user:FirebaseUser){
-//   user.sendEmailVerification().addOnCompleteListener(this) {
-//           task ->
-//      if(task.isComplete){
-
-//      }
-// }
-
-//  }
-//}
+        }else
+            Toast.makeText(this, R.string.password_dont_match, Toast.LENGTH_SHORT).show()
+    }
+}
 
 
 

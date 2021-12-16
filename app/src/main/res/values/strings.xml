@@ -45,6 +45,8 @@
     Gonzalo Echevarría\n
     Elisa Coellon\n
     Miguel Melero</string>
+    <string name="welcome_text">Bienvenido a\nEASYHODLING</string>
+    <string name="recuperar_contrasena">Contraseña recuperada</string>
 
     <!--Botones-->
     <string name="signin_bt">Entrar</string>
@@ -102,5 +104,10 @@
     <string name="correoinvalido">Correo invalido</string>
     <string name="email_blank">No puede estar el correo vacío</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="password_dont_match">Las contraseñas no coinciden</string>
+    <string name="buy_completed">Orden de compra completada!!</string>
+    <string name="sell_completed">Orden de venta completada!!</string>
+    <string name="insuficient_funds">Fondos insuficientes…</string>
+    <string name="inexistent_coin">La moneda no existe…</string>
 
 </resources>

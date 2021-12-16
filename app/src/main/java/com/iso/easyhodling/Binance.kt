@@ -1,7 +1,7 @@
 package com.iso.easyhodling
 
 object Binance {
-    private val coins = mutableMapOf(
+    val coins = mutableMapOf(
         "BTC" to 5.0,
         "ETH" to 10.0,
         "SHIB" to 0.0,
@@ -12,7 +12,7 @@ object Binance {
         "BNB" to 0.0,
         "LTC" to 0.0
     )
-    private val coinValues = mutableMapOf(
+    val coinValues = mutableMapOf(
         "BTC" to 57050.69,
         "ETH" to 4070.37,
         "SHIB" to 0.000045,
@@ -36,7 +36,7 @@ object Binance {
         return coinValues[asset].toString()
     }
 
-    fun marketOrderBuy(assetForSell: String = "BTC", assetToBuy: String, quantityToBuy: Double) {
+    fun marketOrderBuy(assetForSell: String, assetToBuy: String, quantityToBuy: Double) {
         val newSoldQty = coins[assetForSell]?.minus(
             calculateAssetConversion(
                 assetToBuy,
@@ -48,7 +48,7 @@ object Binance {
         coins[assetForSell] = newSoldQty!!
     }
 
-    fun marketOrderSell(assetForSell: String, assetToBuy: String = "BTC", quantityToSell: Double) {
+    fun marketOrderSell(assetForSell: String, assetToBuy: String, quantityToSell: Double) {
         val newQty = coins[assetForSell]?.minus(quantityToSell)
         val newBuyedQty = coins[assetToBuy]?.plus(
             calculateAssetConversion(

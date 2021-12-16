@@ -1,26 +1,24 @@
 package com.iso.easyhodling.ui.trading
 
-import android.content.Intent
-import android.net.Uri
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.iso.easyhodling.databinding.ForumFragmentBinding
+import android.widget.Toast
+import com.iso.easyhodling.R
 import com.iso.easyhodling.databinding.TradingFragmentBinding
-import com.iso.easyhodling.ui.forum.ForumViewModel
 
-class TradingFragment: Fragment() {
+class TradingFragment : Fragment() {
     private lateinit var tradingViewModel: TradingViewModel
-    private var _binding : TradingFragmentBinding? = null
+    private var _binding: TradingFragmentBinding? = null
 
     private val binding get() = _binding!!
 
 
     override fun onCreateView(
-        inflater: LayoutInflater , container: ViewGroup? ,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         tradingViewModel =
@@ -29,13 +27,20 @@ class TradingFragment: Fragment() {
         _binding = TradingFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val tradingBtn = binding.tradingBtn
-        val url = "https://academy.binance.com/es"
-        val uri = Uri.parse(url)
-        tradingBtn.setOnClickListener {startActivity(Intent(Intent.ACTION_VIEW,uri))}
+        binding.buyButton.setOnClickListener {
+            var assetToUse = binding.monedaParaUsar.text.toString().uppercase()
+            var assetToOperate = binding.monedaAOperar.text.toString().uppercase()
+            var quantity = binding.quantity.text.toString()
+            tradingViewModel.buy(requireContext(), assetToUse, assetToOperate, quantity.toDouble())
+        }
+        binding.sellButton.setOnClickListener {
+            var assetToUse = binding.monedaParaUsar.text.toString().uppercase()
+            var assetToOperate = binding.monedaAOperar.text.toString().uppercase()
+            var quantity = binding.quantity.text.toString()
+            tradingViewModel.sell(requireContext(), assetToOperate, assetToUse, quantity.toDouble())
+        }
 
         return root
-
     }
 
     override fun onDestroyView() {

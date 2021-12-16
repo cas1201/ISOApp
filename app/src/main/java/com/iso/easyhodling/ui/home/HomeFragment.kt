@@ -28,22 +28,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        /*
-        val assetToUse = binding.monedaParaUsar.text.toString().uppercase()
-        val assetToOperate = binding.monedaAOperar.text.toString().uppercase()
-        val quantity = binding.quantity.text.toString().toDouble()
-
-
-        if (binding.buyButton.callOnClick()){
-            homeViewModel.buy(assetToUse, assetToOperate, quantity)
-            binding.operationText.text = "Se ha comprado $quantity de $assetToOperate!!"
-        }
-        else if (binding.sellButton.callOnClick()){
-            homeViewModel.sell(assetToOperate, assetToUse, quantity)
-            binding.operationText.text = "Se ha vendido $quantity de $assetToOperate!!"
-        }
-         */
-
         return root
     }
 
